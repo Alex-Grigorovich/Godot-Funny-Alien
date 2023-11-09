@@ -4,7 +4,7 @@
 [ext_resource path="res://Graphics/Tiles/grass.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 153.583, 36.0123 )
+extents = Vector2( 416.665, 36.0123 )
 
 [node name="Level" type="Node2D"]
 
@@ -14,9 +14,14 @@ extents = Vector2( 153.583, 36.0123 )
 
 [node name="Sprite" type="Sprite" parent="Floor"]
 position = Vector2( 472.52, 385.645 )
-scale = Vector2( 4.36001, 1 )
+scale = Vector2( 11.8515, 1 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
 position = Vector2( 472.52, 385.645 )
 shape = SubResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="Floor"]
+position = Vector2( 452.577, 306.469 )
+current = true
+zoom = Vector2( 2, 2 )
