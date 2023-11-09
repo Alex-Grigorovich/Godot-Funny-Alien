@@ -16,8 +16,10 @@ func _physics_process(delta):
 	animate()
 
 func apply_gravity():
-	if not is_on_floor():
+	if not is_on_floor(): 
 		linear_velocity.y += GRAVITY
+	elif is_on_ceiling():
+		linear_velocity.y = 1
 	else:
 		linear_velocity.y = 0
 		
