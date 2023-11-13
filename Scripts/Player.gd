@@ -9,6 +9,8 @@ const LEVEL_LIMIT = 3000
 
 onready var sprite = $Sprite
 
+var lives = 3
+
 func _physics_process(delta):
 	apply_gravity()
 	move()
@@ -19,13 +21,12 @@ func _physics_process(delta):
 func apply_gravity():
 	if position.y > LEVEL_LIMIT:
 		end_game()
-	if not is_on_floor(): 
-		linear_velocity.y += GRAVITY
+	if is_on_floor() and linear_velocity.y > 0: 
+		linear_velocity.y = 0
 	elif is_on_ceiling():
 		linear_velocity.y = 1
 	else:
-		linear_velocity.y = 0
-		
+		linear_velocity.y += GRAVITY		
 		
 func move():
 	if Input.is_action_pressed("left") and not Input.is_action_pressed("right"):
@@ -53,3 +54,11 @@ func animate():
 	
 func end_game():
 	get_tree().change_scene("res://GUI/GameOver.tscn")
+
+func hurt():
+	position.y -= 1
+	yield(get_tree(), "idle_frame")
+	lives -= 1
+	if lives < 1:
+		end_game()
+	linear_velocity.y = -JUMP_SPEED * 0.9
