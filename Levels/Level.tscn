@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Graphics/Spritesheet/level.png" type="Texture" id=2]
 [ext_resource path="res://Enemies/Spike.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Sounds/06-Green-Planet.wav" type="AudioStream" id=4]
+[ext_resource path="res://Levels/Spring.tscn" type="PackedScene" id=5]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 70, 0, 70, 70, 0, 70 )
@@ -237,6 +238,7 @@ resource_local_to_scene = true
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 270.116, 443.908 )
 collision_layer = 2
+collision_mask = 2147483662
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 11 )
@@ -256,3 +258,14 @@ position = Vector2( 901.876, 452.888 )
 stream = ExtResource( 4 )
 volume_db = -10.0
 autoplay = true
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Spring" parent="Node" instance=ExtResource( 5 )]
+position = Vector2( 373.352, 452.548 )
+
+[node name="Spring2" parent="Node" instance=ExtResource( 5 )]
+position = Vector2( 2873.68, 458.205 )
+
+[node name="Spring3" parent="Node" instance=ExtResource( 5 )]
+position = Vector2( 2703.98, 452.548 )

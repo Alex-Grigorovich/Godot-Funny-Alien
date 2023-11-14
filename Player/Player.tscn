@@ -22,11 +22,6 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 12 ), ExtResource( 4 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 3 ), ExtResource( 6 ) ],
-"loop": true,
-"name": "Walk",
-"speed": 15.0
-}, {
 "frames": [ ExtResource( 7 ), ExtResource( 9 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "Idle",
@@ -36,6 +31,11 @@ animations = [ {
 "loop": true,
 "name": "Jump",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 12 ), ExtResource( 4 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 3 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 15.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]

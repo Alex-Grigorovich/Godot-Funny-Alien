@@ -6,10 +6,9 @@ const GRAVITY = 250
 const UP = Vector2(0, -1)
 const JUMP_SPEED = 2400
 const LEVEL_LIMIT = 3000
-
 onready var sprite = $Sprite
-
 var lives = 3
+var boost_multiplayer = 1.5
 
 func _physics_process(delta):
 	apply_gravity()
@@ -64,3 +63,9 @@ func hurt():
 		end_game()
 	linear_velocity.y = -JUMP_SPEED * 0.9
 	$PainSound.play()
+
+func boost():
+	position.y -= 1
+	yield(get_tree(), "idle_frame")
+	linear_velocity.y = -JUMP_SPEED * boost_multiplayer
+	
