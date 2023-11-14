@@ -11,5 +11,5 @@ dest_files=[ "res://.import/background_music.ogg-3d862cecbc19351ddfddf5be2c549c6
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

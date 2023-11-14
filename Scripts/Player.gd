@@ -39,7 +39,8 @@ func move():
 func jump():
 	if Input.is_action_pressed("jump") and is_on_floor():
 		linear_velocity.y -= JUMP_SPEED
-
+		$JumpSound.play()
+	
 func animate():
 	if linear_velocity.y < 0:
 		sprite.play("Jump")
@@ -62,3 +63,4 @@ func hurt():
 	if lives < 1:
 		end_game()
 	linear_velocity.y = -JUMP_SPEED * 0.9
+	$PainSound.play()

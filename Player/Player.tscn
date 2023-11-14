@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Player/p3_walk/p3_walk01.png" type="Texture" id=2]
@@ -17,6 +17,8 @@
 [ext_resource path="res://Graphics/Backgrounds/background_2.png" type="Texture" id=15]
 [ext_resource path="res://Graphics/Backgrounds/background_3.png" type="Texture" id=16]
 [ext_resource path="res://Graphics/Backgrounds/background4.png" type="Texture" id=17]
+[ext_resource path="res://Sounds/jump.ogg" type="AudioStream" id=18]
+[ext_resource path="res://Sounds/player_hurt.ogg" type="AudioStream" id=19]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -25,14 +27,14 @@ animations = [ {
 "name": "Walk",
 "speed": 15.0
 }, {
-"frames": [ ExtResource( 10 ) ],
-"loop": true,
-"name": "Jump",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 7 ), ExtResource( 9 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "Jump",
 "speed": 5.0
 } ]
 
@@ -109,3 +111,11 @@ texture = ExtResource( 17 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="JumpSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 18 )
+volume_db = -10.0
+
+[node name="PainSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 19 )
+volume_db = -10.0
