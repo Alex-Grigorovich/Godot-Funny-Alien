@@ -7,4 +7,5 @@ func _ready():
 
 func _on_Spike_body_entered(body):
 	if body.has_method("hurt"):
+		get_tree().call_group("Rules", "hurt")
 		body.hurt()

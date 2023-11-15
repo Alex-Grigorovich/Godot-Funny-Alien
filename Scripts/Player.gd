@@ -7,7 +7,7 @@ const UP = Vector2(0, -1)
 const JUMP_SPEED = 2400
 const LEVEL_LIMIT = 3000
 onready var sprite = $Sprite
-var lives = 3
+
 var boost_multiplayer = 1.5
 
 func _physics_process(delta):
@@ -19,7 +19,7 @@ func _physics_process(delta):
 
 func apply_gravity():
 	if position.y > LEVEL_LIMIT:
-		end_game()
+		get_tree().call_group("Rules", "end_game")
 	if is_on_floor() and linear_velocity.y > 0: 
 		linear_velocity.y = 0
 	elif is_on_ceiling():
@@ -52,15 +52,12 @@ func animate():
 	else:
 		sprite.play("Idle")
 	
-func end_game():
-	get_tree().change_scene("res://GUI/GameOver.tscn")
+
 
 func hurt():
 	position.y -= 1
 	yield(get_tree(), "idle_frame")
-	lives -= 1
-	if lives < 1:
-		end_game()
+	
 	linear_velocity.y = -JUMP_SPEED * 0.9
 	$PainSound.play()
 
