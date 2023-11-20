@@ -57,7 +57,6 @@ func animate():
 func hurt():
 	position.y -= 1
 	yield(get_tree(), "idle_frame")
-	
 	linear_velocity.y = -JUMP_SPEED * 0.9
 	$PainSound.play()
 
