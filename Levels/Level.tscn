@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Graphics/Spritesheet/level.png" type="Texture" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://Levels/GameRules.gd" type="Script" id=6]
 [ext_resource path="res://GUI/GUI.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Levels/Coin.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Enemies/Snail.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Enemies/Slime.tscn" type="PackedScene" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 70, 0, 70, 70, 0, 70 )
@@ -258,7 +260,7 @@ tile_data = PoolIntArray( -131002, 1, 0, -131001, 0, 0, -131000, 0, 0, -130999, 
 
 [node name="Spike" parent="Spikes" instance=ExtResource( 3 )]
 modulate = Color( 0.137255, 0.807843, 0, 1 )
-position = Vector2( 901.876, 452.888 )
+position = Vector2( 785.745, 454.223 )
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
@@ -284,7 +286,15 @@ position = Vector2( 2703.98, 452.548 )
 position = Vector2( 498.505, 443.366 )
 
 [node name="Coin2" parent="Coins" instance=ExtResource( 8 )]
-position = Vector2( 1103.21, 464.882 )
+position = Vector2( 1822.69, 858.66 )
 
 [node name="Coin3" parent="Coins" instance=ExtResource( 8 )]
 position = Vector2( 1381.18, 636.409 )
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Snail" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 620.674, 474.633 )
+
+[node name="Slime" parent="Enemies" instance=ExtResource( 10 )]
+position = Vector2( 1013.14, 476.538 )
